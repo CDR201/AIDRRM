@@ -13,7 +13,16 @@ class Sugerencia extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('sugerencia', function (Blueprint $table) {
+            $table->increments('Ids');
+            $table->integer('ide')->unsigned();
+            $table->foreign('ide')->references('ide')->on('empleo');
+            $table->integer('idus')->unsigned();
+		    $table->foreign('idus')->references('idus')->on('usuario');
+            $table->rememberToken();
+            $table->softDeletes();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +32,6 @@ class Sugerencia extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('sugerencia');
     }
 }

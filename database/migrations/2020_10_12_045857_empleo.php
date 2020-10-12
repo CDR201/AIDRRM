@@ -13,7 +13,18 @@ class Empleo extends Migration
      */
     public function up()
     {
-        //
+
+        Schema::create('empleo', function (Blueprint $table) {
+            $table->increments('Ide');
+			$table->string('Categoria',30);
+            $table->integer('Sueldo');
+            $table->string('Requisitos',100);
+            $table->integer('idemp')->unsigned();
+		    $table->foreign('idemp')->references('idemp')->on('empresa');
+            $table->rememberToken();
+            $table->softDeletes();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +34,6 @@ class Empleo extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('empleo');
     }
 }

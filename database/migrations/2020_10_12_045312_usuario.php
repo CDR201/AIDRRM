@@ -13,7 +13,20 @@ class Usuario extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('usuario', function (Blueprint $table) {
+            $table->increments('Idus');
+			$table->string('Nombre',30);
+            $table->string('Apellido M',20);
+            $table->string('Apellido P',20);
+            $table->integer('Edad');
+            $table->string('Calle',50);
+            $table->string('Estado',30);
+            $table->integer('CP');
+            $table->string('CV',254);
+            $table->rememberToken();
+            $table->softDeletes();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +36,6 @@ class Usuario extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('usuario');
     }
 }
