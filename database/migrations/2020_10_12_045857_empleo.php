@@ -19,8 +19,8 @@ class Empleo extends Migration
 			$table->string('Categoria',30);
             $table->integer('Sueldo');
             $table->string('Requisitos',100);
-            $table->integer('idemp')->unsigned();
-		    $table->foreign('idemp')->references('idemp')->on('empresa');
+            $table->integer('Idem')->unsigned();
+		    $table->foreign('Idem')->references('Idem')->on('empresa');
             $table->rememberToken();
             $table->softDeletes();
             $table->timestamps();

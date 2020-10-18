@@ -15,10 +15,10 @@ class Sugerencia extends Migration
     {
         Schema::create('sugerencia', function (Blueprint $table) {
             $table->increments('Ids');
-            $table->integer('ide')->unsigned();
-            $table->foreign('ide')->references('ide')->on('empleo');
-            $table->integer('idus')->unsigned();
-		    $table->foreign('idus')->references('idus')->on('usuario');
+            $table->integer('Ide')->unsigned();
+            $table->foreign('Ide')->references('Ide')->on('empleo');
+            $table->integer('Idu')->unsigned();
+		    $table->foreign('Idu')->references('Idu')->on('usuario');
             $table->rememberToken();
             $table->softDeletes();
             $table->timestamps();
