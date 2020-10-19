@@ -5,11 +5,9 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 
-
-class empleo extends Model
+class Empresas extends Model
 {
     use Notifiable;
     protected $fillable = [
-        'Ide','Cateoria','Sueldo','Requisitos','Idem',
-            ];
+        'Idem','Nombre','Tipo','Calle','Estado','CP', ];
 }

@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group (['prefix' => 'api'], function(){
+    Route::apiResource('empresa','empresacontroller');
+    Route::apiResource('usuario','usuariocontroller');
+    Route::apiResource('empleo','empleocontroller');
+    Route::apiResource('sugerencia','sugerenciacontroller');
+});

@@ -4,12 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
-
-
-class sugerencia extends Model
+class Usuarios extends Model
 {
     use Notifiable;
     protected $fillable = [
-        'Ids','Ide','Idu',
-            ];
+'Idu','Nombre','Apellido M','Apellido P','Edad','Calle','Estado','CP','CV'
+    ];
 }

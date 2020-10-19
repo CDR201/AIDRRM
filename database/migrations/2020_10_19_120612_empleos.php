@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Empleo extends Migration
+class Empleos extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,18 @@ class Empleo extends Migration
      */
     public function up()
     {
-
-        Schema::create('empleo', function (Blueprint $table) {
+        Schema::create('Empleos', function (Blueprint $table) {
             $table->increments('Ide');
 			$table->string('Categoria',30);
             $table->integer('Sueldo');
             $table->string('Requisitos',100);
             $table->integer('Idem')->unsigned();
-		    $table->foreign('Idem')->references('Idem')->on('empresa');
+		    $table->foreign('Idem')->references('Idem')->on('Empresas');
             $table->rememberToken();
             $table->softDeletes();
             $table->timestamps();
         });
+
     }
 
     /**
@@ -34,6 +34,6 @@ class Empleo extends Migration
      */
     public function down()
     {
-        Schema::drop('empleo');
+        Schema::drop('Empleos');
     }
 }

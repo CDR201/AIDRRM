@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Usuario extends Migration
+class Usuarios extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class Usuario extends Migration
      */
     public function up()
     {
-        Schema::create('usuario', function (Blueprint $table) {
+        Schema::create('Usuarios', function (Blueprint $table) {
             $table->increments('Idu');
 			$table->string('Nombre',30);
             $table->string('Apellido M',20);
@@ -26,8 +26,7 @@ class Usuario extends Migration
             $table->rememberToken();
             $table->softDeletes();
             $table->timestamps();
-        });
-    }
+        });    }
 
     /**
      * Reverse the migrations.
@@ -36,6 +35,6 @@ class Usuario extends Migration
      */
     public function down()
     {
-        Schema::drop('usuario');
+        Schema::drop('Usuarios');
     }
 }
